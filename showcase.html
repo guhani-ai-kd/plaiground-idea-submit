@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과제 소개 · Kwangdong PLAIground</title>
+<link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{--bg:#0B0B0E;--bg-2:#101015;--card:#15151B;--card-2:#1A1A22;--line:#2A2A35;--line-soft:#22222B;--ink:#F3F3F6;--ink-mute:#9A9AA6;--ink-faint:#6E6E7A;--orange:#FF5A1F;--orange-soft:#FF7A47;--lime:#D4F542;--mono:ui-monospace,Consolas,Menlo,monospace;--sans:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;letter-spacing:-0.01em;padding:32px 16px 80px;}
+  .wrap{max-width:980px;margin:0 auto;}
+  .hero{position:relative;border:1px solid var(--line);border-radius:22px;padding:34px 32px 30px;overflow:hidden;background:radial-gradient(120% 130% at 92% 12%,rgba(255,90,31,0.22),transparent 52%),var(--bg-2);}
+  .topline{height:3px;width:100%;background:var(--lime);border-radius:3px;}
+  .eyebrow-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .eyebrow{font-size:13px;font-weight:700;color:var(--ink-mute);}
+  .datechip{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--orange);border:1px solid rgba(255,90,31,.4);border-radius:20px;padding:2px 10px;}
+  h1.title{margin-top:14px;font-size:clamp(32px,7vw,56px);line-height:0.98;font-weight:800;letter-spacing:-0.03em;}
+  h1.title .plai{color:var(--orange);}
+  .tagline{margin-top:12px;font-size:clamp(17px,4vw,23px);font-weight:700;color:var(--lime);letter-spacing:-0.02em;}
+  .lead{margin-top:16px;font-size:16px;color:#E4E4EA;max-width:760px;}
+  .lead b{color:#fff;font-weight:800;}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
+  .stat{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:16px;}
+  .stat .n{font-family:var(--mono);font-size:28px;font-weight:800;color:var(--orange);line-height:1;}
+  .stat .l{font-size:13px;color:var(--ink-mute);font-weight:600;margin-top:8px;}
+  .section{margin-top:38px;}
+  .marker{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:0.08em;color:var(--orange);}
+  h2{font-size:clamp(20px,4.5vw,26px);font-weight:800;letter-spacing:-0.02em;margin-top:8px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;}
+  .tcard{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,var(--card-2),var(--card));padding:20px;display:flex;flex-direction:column;transition:.18s;}
+  .tcard:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px);}
+  .tc-top{display:flex;align-items:center;gap:10px;}
+  .tnum{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--orange);color:#0B0B0E;font-family:var(--mono);font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .tname{font-size:18px;font-weight:800;letter-spacing:-0.02em;}
+  .tteam{font-size:12px;color:var(--ink-faint);font-weight:600;margin-left:auto;text-align:right;}
+  .ttopic{margin-top:14px;font-size:16px;font-weight:700;color:#fff;line-height:1.35;}
+  .tprob{margin-top:10px;font-size:13.5px;color:var(--ink-mute);line-height:1.55;}
+  .qlabel{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--orange);letter-spacing:0.05em;margin-top:12px;}
+  .tappr{margin-top:4px;font-size:13.5px;color:#D8D8DE;line-height:1.55;}
+  .ttags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--lime);border:1px solid rgba(212,245,66,.3);border-radius:7px;padding:3px 9px;}
+  .tout{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--ink-mute);}
+  .tout b{color:var(--orange-soft);font-weight:700;}
+  .empty{margin-top:18px;color:var(--ink-faint);border:1px dashed var(--line);border-radius:14px;padding:40px;text-align:center;}
+  .foot{margin-top:36px;text-align:center;color:var(--ink-faint);font-size:13px;}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}.stats{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="topline"></div>
+    <div class="eyebrow-row"><span class="eyebrow">제1회 · 광동제약 사내 AI 해커톤</span><span class="datechip">JUN 22—23</span></div>
+    <h1 class="title">우리가 풀고 싶은<br>문제들</h1>
+    <div class="tagline">상상을 코드로, 단 이틀이면 충분해</div>
+    <p class="lead"><b>Kwangdong PLAIground</b>에 모인 팀들이 현업에서 마주한 문제와, 그걸 AI로 어떻게 풀지 아이디어를 모았습니다. 동료들이 어떤 도전을 시작했는지 살펴봐 주세요. <b>6/23(화) 15:00</b> 발표 & 평가에 함께해 주시면 큰 힘이 됩니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" id="nTeams">–</div><div class="l">제출 팀</div></div>
+      <div class="stat"><div class="n">39</div><div class="l">참가 임직원</div></div>
+      <div class="stat"><div class="n">48h</div><div class="l">상상 → 결과물</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="marker">// THE PROJECTS</div>
+    <h2>팀별 과제 한눈에 보기</h2>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none">아직 제출된 과제가 없습니다. 팀들이 제출하면 이곳에 자동으로 나타납니다.</div>
+  </div>
+
+  <div class="foot"># PLAIground · 문의 AI센터 · 이 페이지는 제출 현황에 따라 자동 갱신됩니다</div>
+</div>
+
+<script src="config.js"></script>
+<script>
+  const esc=s=>String(s==null?"":s).replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
+  const URL=(window.PLAI_CONFIG||{}).WEB_APP_URL||"";
+
+  async function render(){
+    const grid=document.getElementById("grid"), empty=document.getElementById("empty");
+    let list=[];
+    try{ if(URL.indexOf("script.google.com")>=0) list=await (await fetch(URL)).json(); }catch(e){}
+    if(!Array.isArray(list)) list=[];
+    // 주제(title)가 있는 행만 노출
+    list=list.filter(x=>String(x.title||"").trim());
+    document.getElementById("nTeams").textContent=list.length;
+    grid.innerHTML="";
+    if(!list.length){ empty.style.display="block"; return; }
+    empty.style.display="none";
+    list.forEach((t,i)=>{
+      const tags=String(t.tools||"").split(/[,，]/).map(x=>x.trim()).filter(Boolean).map(x=>`<span class="tag">${esc(x)}</span>`).join("");
+      const el=document.createElement("div");
+      el.className="tcard";
+      el.innerHTML=`<div class="tc-top"><div class="tnum">${String(i+1).padStart(2,"0")}</div>
+        <div class="tname">${esc(t.title)}</div>
+        <div class="tteam">${esc(t.team)}${t.org?" · "+esc(t.org):""}</div></div>
+        ${t.topic?`<div class="ttopic">${esc(t.topic)}</div>`:""}
+        ${t.problem?`<div class="qlabel">① 풀고 싶은 문제</div><div class="tprob">${esc(t.problem)}</div>`:""}
+        ${t.approach?`<div class="qlabel">② 해결 방법</div><div class="tappr">${esc(t.approach)}</div>`:""}
+        ${tags?`<div class="ttags">${tags}</div>`:""}
+        ${t.output?`<div class="tout"><b>기대 결과물</b> · ${esc(t.output)}</div>`:""}`;
+      grid.appendChild(el);
+    });
+  }
+  render();
+  setInterval(render,30000); // 30초마다 자동 갱신
+</script>
+</body>
+</html>

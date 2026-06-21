@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과제 제출 · Kwangdong PLAIground</title>
+<link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{--bg:#0B0B0E;--card:#15151B;--line:#2A2A35;--line-soft:#22222B;--ink:#F3F3F6;--ink-mute:#9A9AA6;--ink-faint:#6E6E7A;--orange:#FF5A1F;--orange-soft:#FF7A47;--lime:#D4F542;--mono:ui-monospace,Consolas,Menlo,monospace;--sans:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;letter-spacing:-0.01em;padding:32px 16px 64px;}
+  .wrap{max-width:680px;margin:0 auto;}
+  .top{height:3px;background:var(--lime);border-radius:3px;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--orange);letter-spacing:0.08em;margin-top:20px;}
+  h1{font-size:clamp(28px,6vw,40px);font-weight:800;letter-spacing:-0.03em;margin-top:8px;line-height:1.05;}
+  h1 .plai{color:var(--orange);}
+  .lead{color:var(--ink-mute);font-size:14.5px;margin-top:12px;}
+  .links{margin-top:14px;font-size:13px;}
+  .links a{color:var(--lime);font-weight:700;text-decoration:none;}
+  form{margin-top:26px;display:flex;flex-direction:column;gap:18px;}
+  .field label{display:block;font-size:14px;font-weight:700;margin-bottom:7px;}
+  .field label .req{color:var(--orange);margin-left:4px;}
+  .field label .hint{color:var(--ink-faint);font-size:12px;font-weight:500;margin-left:6px;}
+  input,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--sans);font-size:15px;padding:12px 14px;transition:.15s;}
+  input:focus,textarea:focus{outline:none;border-color:var(--orange);}
+  textarea{resize:vertical;min-height:78px;line-height:1.5;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .btn{margin-top:6px;background:var(--orange);color:#0B0B0E;border:none;border-radius:11px;font-family:var(--sans);font-size:16px;font-weight:800;padding:15px;cursor:pointer;transition:.15s;}
+  .btn:hover{background:var(--orange-soft);}
+  .btn:disabled{opacity:.5;cursor:default;}
+  .msg{margin-top:16px;border-radius:11px;padding:14px 16px;font-weight:700;font-size:14.5px;display:none;}
+  .msg.ok{display:block;background:rgba(212,245,66,.1);border:1px solid rgba(212,245,66,.4);color:var(--lime);}
+  .msg.err{display:block;background:rgba(255,90,31,.1);border:1px solid rgba(255,90,31,.4);color:var(--orange-soft);}
+  .note{margin-top:22px;font-size:12.5px;color:var(--ink-faint);border-top:1px solid var(--line-soft);padding-top:16px;}
+  @media(max-width:520px){.row2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"></div>
+  <div class="eyebrow">// SHARE YOUR IDEA</div>
+  <h1>제1회 <span class="plai">PLAI</span>ground<br>과제 아이디어 제출</h1>
+  <p class="lead">최종 결과물이 아니라 <b style="color:#fff">아이디어 제출</b>입니다. DAY1 ‘팀별 주제·컨셉 공유’ 시간에, 우리 팀이 <b style="color:#fff">① 어떤 문제를 풀고 싶은지</b>와 <b style="color:#fff">② 그걸 어떻게 풀 것인지</b>를 정리해 주세요. 같은 팀명으로 다시 내면 수정됩니다. 제출 내용은 미참가 임직원 소개 자료로도 활용됩니다.</p>
+  <div class="links"><a href="showcase.html" target="_blank">→ 제출 현황(소개 페이지) 보기</a></div>
+
+  <form id="f">
+    <div class="row2">
+      <div class="field"><label>팀명 <span class="req">*</span></label><input name="team" required maxlength="60" placeholder="예: 데이터광동"></div>
+      <div class="field"><label>소속 <span class="hint">부서/계열사</span></label><input name="org" maxlength="60" placeholder="예: 디지털혁신팀"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>팀 대표자</label><input name="leader" maxlength="40" placeholder="예: 김광동"></div>
+      <div class="field"><label>팀원 <span class="hint">이름/인원</span></label><input name="members" maxlength="120" placeholder="예: 김광동, 이가산 (2명)"></div>
+    </div>
+    <div class="field"><label>과제 주제 <span class="req">*</span><span class="hint">아이디어를 한 문장으로</span></label><input name="title" required maxlength="80" placeholder="예: 영업 일보 자동 요약 봇"></div>
+    <div class="field"><label>한 줄 소개 <span class="hint">공지에 노출되는 카피 · 40자 내외</span></label><input name="topic" maxlength="80" placeholder="예: 매일 쌓이는 영업 일보를 3줄로 요약해주는 봇"></div>
+    <div class="field"><label>① 해결하고 싶은 문제 / 배경 <span class="hint">왜 이걸 풀려고 하나요</span></label><textarea name="problem" maxlength="500" placeholder="현업에서 마주한 어떤 불편/문제를 풀려는지, 왜 중요한지 적어 주세요."></textarea></div>
+    <div class="field"><label>② 어떻게 해결할 것인가 <span class="hint">접근 방식 · 아이디어</span></label><textarea name="approach" maxlength="500" placeholder="어떤 방법/흐름으로 풀 계획인지 적어 주세요. (예: 일보 데이터를 받아 LLM으로 3줄 요약 → Slack 자동 전송)"></textarea></div>
+    <div class="field"><label>사용 (예정) AI 도구 <span class="hint">쉼표로 구분</span></label><input name="tools" maxlength="120" placeholder="예: Claude, Claude Code, MISO"></div>
+    <div class="field"><label>기대 결과물 <span class="hint">이틀 뒤 만들 모습</span></label><input name="output" maxlength="120" placeholder="예: 사내 Slack 연동 요약 봇"></div>
+    <button class="btn" type="submit" id="sb">아이디어 제출하기</button>
+    <div class="msg" id="msg"></div>
+  </form>
+  <div class="note"># PLAIground · 문의 AI센터 · DAY1 주제·컨셉 공유 시간 작성 (마감 6/22(월) 12:00)</div>
+</div>
+
+<script src="config.js"></script>
+<script>
+  const f=document.getElementById("f"), msg=document.getElementById("msg"), sb=document.getElementById("sb");
+  const URL=(window.PLAI_CONFIG||{}).WEB_APP_URL||"";
+
+  f.addEventListener("submit", async e=>{
+    e.preventDefault();
+    if(!URL || URL.indexOf("script.google.com")<0){
+      msg.className="msg err"; msg.textContent="설정 오류: config.js 의 WEB_APP_URL 을 먼저 입력하세요."; return;
+    }
+    const data=Object.fromEntries(new FormData(f).entries());
+    sb.disabled=true; sb.textContent="제출 중...";
+    try{
+      // Content-Type 헤더를 지정하지 않음 → 단순요청(text/plain)으로 전송되어 CORS preflight 회피
+      const r=await fetch(URL,{method:"POST",body:JSON.stringify(data)});
+      const j=await r.json();
+      if(j.ok){
+        msg.className="msg ok";
+        msg.textContent=(j.updated?"수정 완료! ":"제출 완료! ")+"감사합니다 🎉"+(j.count?"  (현재 "+j.count+"개 팀 제출)":"");
+        if(!j.updated) f.reset();
+      }else{ msg.className="msg err"; msg.textContent=j.error||"제출에 실패했습니다."; }
+    }catch(err){
+      msg.className="msg err"; msg.textContent="제출 실패 — 네트워크 또는 배포 설정을 확인하세요. (Apps Script 액세스: 모든 사용자)";
+    }
+    sb.disabled=false; sb.textContent="제출하기";
+    msg.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+</script>
+</body>
+</html>
