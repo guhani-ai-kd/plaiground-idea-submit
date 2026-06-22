@@ -16,9 +16,13 @@
   .eyebrow-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;}
   .eyebrow{font-size:13px;font-weight:700;color:var(--ink-mute);}
   .datechip{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--orange);border:1px solid rgba(255,90,31,.4);border-radius:20px;padding:2px 10px;}
-  h1.title{margin-top:14px;font-size:clamp(32px,7vw,56px);line-height:0.98;font-weight:800;letter-spacing:-0.03em;}
+  h1.title{margin-top:14px;font-size:clamp(38px,8.5vw,72px);line-height:0.98;font-weight:800;letter-spacing:-0.03em;}
   h1.title .plai{color:var(--orange);}
-  .tagline{margin-top:12px;font-size:clamp(17px,4vw,23px);font-weight:700;color:var(--lime);letter-spacing:-0.02em;}
+  .subtitle{margin-top:12px;font-size:clamp(22px,5vw,34px);font-weight:800;color:#fff;letter-spacing:-0.025em;}
+  .tagline{margin-top:10px;font-size:clamp(15px,3.6vw,20px);font-weight:700;color:var(--lime);letter-spacing:-0.02em;}
+  .heroinfo{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .heroinfo span{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--ink-mute);border:1px solid var(--line);border-radius:20px;padding:5px 13px;}
+  .heroinfo span b{color:#fff;font-weight:800;}
   .lead{margin-top:16px;font-size:16px;color:#E4E4EA;max-width:760px;}
   .lead b{color:#fff;font-weight:800;}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
@@ -78,13 +82,15 @@
   <div class="hero">
     <div class="topline"></div>
     <div class="eyebrow-row"><span class="eyebrow">제1회 · 광동제약 사내 AI 해커톤</span><span class="datechip">JUN 22—23</span></div>
-    <h1 class="title">우리가 풀고 싶은<br>문제들</h1>
+    <h1 class="title">Kwangdong <span class="plai">PLAI</span>ground</h1>
+    <div class="subtitle">우리가 풀고 싶었던 문제들</div>
     <div class="tagline">상상을 코드로, 단 이틀이면 충분해</div>
+    <div class="heroinfo"><span>🗓 6월 23일(화) <b>13:30</b>부터</span><span>📍 광동제약 가산홀</span></div>
     <p class="lead"><b>Kwangdong PLAIground</b>에 모인 팀들이 현업에서 마주한 문제와, 그걸 AI로 어떻게 풀지 아이디어를 모았습니다. 동료들이 어떤 도전을 시작했는지 살펴봐 주세요. <b>6/23(화) 13:30</b> 발표 & 평가에 함께해 주시면 큰 힘이 됩니다.</p>
     <div class="stats">
       <div class="stat"><div class="n" id="nTeams">–</div><div class="l">제출 팀</div></div>
       <div class="stat"><div class="n">39</div><div class="l">참가 임직원</div></div>
-      <div class="stat"><div class="n">48h</div><div class="l">상상 → 결과물</div></div>
+      <div class="stat"><div class="n">28h</div><div class="l">상상 → 결과물</div></div>
     </div>
   </div>
 
